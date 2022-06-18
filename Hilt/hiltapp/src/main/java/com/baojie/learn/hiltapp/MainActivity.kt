@@ -9,6 +9,8 @@ import com.baojie.learn.hiltapp.databinding.ActivityMainBinding
 import com.baojie.learn.hiltapp.hilt.HttpObject
 import com.baojie.learn.hiltapp.hilt.Student
 import com.baojie.learn.hiltapp.hilt.User
+import com.baojie.learn.hiltapp.httpprocessor.bean.ResponceData
+import com.baojie.learn.hiltapp.httpprocessor.processor.HttpCallback
 import com.baojie.learn.hiltapp.interfacedi.Mouther
 import com.baojie.learn.hiltapp.interfacedi.People
 import com.blankj.utilcode.util.ActivityUtils
@@ -61,5 +63,11 @@ class MainActivity : AppCompatActivity() {
         binding.btn.setOnClickListener {
             ActivityUtils.startActivity(SecActivity::class.java)
         }
+
+        (application as MyApplication).getHttpProcessor().post("", hashMapOf(), object : HttpCallback<ResponceData>(){
+            override fun onSuccess(result: ResponceData) {
+
+            }
+        })
     }
 }

@@ -1,4 +1,4 @@
-package com.baojie.learn.hiltapp.hilt.annotation
+package com.baojie.learn.hiltapp.httpprocessor.annotation
 
 import javax.inject.Qualifier
 
@@ -9,4 +9,4 @@ import javax.inject.Qualifier
  */
 @Qualifier
 @Retention(AnnotationRetention.RUNTIME)
-annotation class BindOkhttp()
+annotation class BindVolley()
